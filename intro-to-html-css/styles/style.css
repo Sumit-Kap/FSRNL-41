@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* font-size: 20px; */
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  /* border: 6px solid yellow; */
+}
+.container {
+  width: 100px;
+  height: 200px;
+  margin: 0px 45px 20px 10px;
+  padding: 0px 45px 20px 10px;
+  border: 8px solid red;
+}
+
+#container {
+  width: 100vw;
+  height: 2000px;
+  font-size: 10px;
+  /* margin: 20px 0px;
+  padding: 0px 45px 20px 10px; */
+  /* padding: relative; */
+  border: 8px solid yellow;
+}
+.para-item-1 {
+  font-size: 100%; /* 2 root element font-size  */
+}
+.para-item-2 {
+  font-size: 1.2em; /* 2 root element font-size  */
+}
+
+.img-1 {
+  position: sticky;
+  top: 300px;
+}
+
+.img-2 {
+  position: fixed;
+}
+
+img {
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.demo-container {
+  width: 100vw;
+  height: 4000px;
+}
+
+/* px - pixels - by default that browser will give to most of the properties
+em - element
+rem - root element
+percentage, px
+vw - viewport width
+vh - viewport height */
