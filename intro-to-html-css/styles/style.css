@@ -1,14 +1,19 @@
 * {
+  /* margin: 0;
+  padding: 0; */
+  /* font-size: 20px; */
+  box-sizing: border-box;
+}
+body {
   margin: 0;
   padding: 0;
-  /* font-size: 20px; */
 }
 
-div {
+/* div {
   width: 200px;
   height: 200px;
   /* border: 6px solid yellow; */
-}
+} */
 .container {
   width: 100px;
   height: 200px;
@@ -30,7 +35,7 @@ div {
   font-size: 100%; /* 2 root element font-size  */
 }
 .para-item-2 {
-  font-size: 1.2em; /* 2 root element font-size  */
+  font-size: 60%; /* 2 root element font-size  */
 }
 
 .img-1 {
@@ -52,9 +57,105 @@ img {
   height: 4000px;
 }
 
+.em-container {
+  font-size: 40px;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid red;
+  width: 100px;
+  height: 100px;
+}
+
+/*
+100 * 100 = width * height
+
+width + padding-left + padding-right + border-left + border-right = 
+100 + 10 + 10 + 2+ 2 = 124
+
+height + padding-top + padding-bottom + border-top + border-top = 124
+*/
+
 /* px - pixels - by default that browser will give to most of the properties
 em - element
 rem - root element
 percentage, px
 vw - viewport width
 vh - viewport height */
+
+/*
+box-model
+display: inline, block, inline-block, flex, grid
+combinators
+float, clear
+media queries
+
+
+padding is nothing but it will create space between content and its border
+margin - is used to seperate two boxes, elements on the web page.
+*/
+
+/*
+box-model - Content + padding + border + margin
+box-sizing - content-box            border-box
+                content w/h           content w/h is adjusted based on padding/border given to the container
+                remains same        
+
+                box-size will increase      box-size remains size
+
+                default                     
+*/
+
+
+/*
+Block                             inline
+Entire line width                 It will take only the content space
+Yes w/h can be modified           w/h cannot be applied
+Yes m/p can be applied            margin/padding can be applied.
+*/
+
+/*
+
+3-tier
+
+Application-layer   Business-logic-layer    Data link layer
+HTML-CSS-JS/ React    Java(Spring), Node.js
+                      ROR, Python               SQL/NOSQL  
+
+
+const arr = [{
+  name:"Animal",
+  imdbRating: 7.0
+  thumbnail:",
+
+},{
+  name:"12th pass"
+}]
+
+arr.map((item, index)=>{
+    return (<div style={{display:'inline-block'}}>{item.name}</div>)
+})
+
+JSX - 
+
+Combinators
+Space combinator
++ combinator
+> combinator
+~ combinator
+*/
+
+/*
+Container
+
+by-default
+
+flex-direction - row
+main-axis - row - justify-content
+cross-axis -column
+
+flex-direction-column
+main-axis-column
+cross-axis - row - align-items
+
+
+*/
