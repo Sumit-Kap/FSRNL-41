@@ -6,22 +6,281 @@
     <title>Intro to CSS</title>
     <!-- Internal CSS Single Line Comments -->
     <style>
+      /* space combinators */
+      /*  greater than combinator - direct children  */
+      /* plus combinator is for adjacent sibling */
+      /*  ~ combinator (subsequent sibling combinator) */
+      p ~ h1 {
+        background-color: green;
+        width: 100px;
+        height: 200px;
+      }
+      body {
+        position: relative;
+        background-color: black;
+      }
       /* div {
         width: 100px;
         height: 100px;
         border: 2px solid black;
       } */
+      .text-container {
+        border: 6px solid black;
+        /* display: inline; */
+        margin-top: 20px;
+        width: 500px;
+        height: 500px;
+      }
+      .box-item-1 {
+        background-color: yellow;
+        /* width: 100px;
+        height: 200px; */
+        margin: 4px;
+        padding: 2px;
+        display: inline-block;
+      }
+      .box-item-2 {
+        background-color: blue;
+        display: inline;
+      }
+      .box-item-3 {
+        background-color: blueviolet;
+        display: inline;
+      }
+      .box-item-4 {
+        background-color: brown;
+        display: inline;
+      }
+      .box-item-5 {
+        background-color: darkgoldenrod;
+        display: inline;
+      }
+      .grid-container {
+        width: 1200px;
+        height: 400px;
+        border: 3px solid black;
+        display: grid;
+        background-color: #ccc;
+        grid-template-rows: repeat(2, 150fr);
+        grid-template-columns: repeat(3, 200fr);
+        grid-row-gap: 30px;
+        grid-column-gap: 40px;
+        /* grid-area */
+      }
+      .flex-container {
+        width: auto;
+        height: 600px;
+        border: 4px solid green;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row; /*   always works on main-axis */
+        flex-wrap: wrap;
+        /* align-content: space-around; */
+      }
+      .flex-item-1 {
+        width: 50px;
+        height: 50px;
+        align-self: center;
+        background-color: yellow;
+        order: -1;
+        flex: 1 0 30%;
+        /* flex-basis: 30%;
+        /* flex-grow: 300; */
+        flex-shrink: 0;
+      }
+      .flex-item-2 {
+        width: 50px;
+        height: 150px;
+        background-color: pink;
+        align-self: baseline;
+        flex: 1;
+        order: 0;
+      }
+      .flex-item-3 {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        align-self: baseline;
+        flex: 1;
+        order: 1;
+      }
+      .flex-item-4 {
+        width: 50px;
+        height: 50px;
+        background-color: orange;
+        align-self: baseline;
+        flex: 1;
+        order: 10;
+      }
+      .flex-item-5 {
+        width: 50px;
+        height: 50px;
+        background-color: cyan;
+        flex: 1;
+        align-self: baseline;
+        order: 2;
+      }
+
+      .text {
+        color: white;
+        font-size: 40px;
+      }
+      .grid-item-1 {
+        background-color: green;
+      }
+      .grid-item-2 {
+        background-color: orange;
+      }
+      .grid-item-3 {
+        background-color: black;
+      }
+      .grid-item-4 {
+        background-color: pink;
+      }
+      .grid-item-5 {
+        background-color: yellow;
+      }
+      .grid-item-6 {
+        background-color: cyan;
+      }
+      .items-container {
+        width: 300px;
+        height: 200px;
+        background-color: orange;
+        border: 2px solid black;
+      }
+      .items-cont {
+        width: 300px;
+        height: 200px;
+        /* float: right; */
+        background-color: yellow;
+        border: 2px solid black;
+        /* position: absolute; */
+        top: 400px;
+        /* left: 300px; */
+
+        box-shadow: 10px 5px 5px red;
+        animation-name: move;
+        animation-duration: 3s;
+      }
+      @keyframes move {
+        from {
+          left: 0px;
+        }
+        to {
+          left: 100px;
+        }
+      }
+      @media (max-width: 500px) {
+        .items-container {
+          width: 300px;
+          height: 200px;
+          background-color: blue;
+          border: 2px solid red;
+        }
+      }
+      @media (min-width: 500px) and (max-width: 700px) {
+        .items-container {
+          width: 300px;
+          height: 200px;
+          background-color: magenta;
+          border: 2px solid brown;
+        }
+      }
     </style>
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <div id="container">
+    <!-- <div id="container">
       <img class="img-1" src="./img1.png" width="100" height="100" />
       <img class="img-2" src="./img2.png" width="100" height="100" />
       <img src="./img3.png" width="100" height="100" />
       <img src="./img4.png" width="100" height="100" />
       <img src="./img5.png" width="100" height="100" />
+    </div> -->
+    <!-- <div class="em-container">
+      <div class="para-item-2">Text</div>
+    </div> -->
+
+    <div class="text-container">
+      <div class="box-item-1">C1</div>
+      <div class="box-item-2">C2</div>
+      <div class="box-item-2">C3</div>
+      <div class="box-item-3">C4</div>
+      <div class="box-item-4">C5</div>
+      <div class="box-item-1">C1</div>
+      <div class="box-item-2">C2</div>
+      <div class="box-item-2">C3</div>
+      <div class="box-item-3">C4</div>
+      <div class="box-item-4">C5</div>
+      <div class="box-item-1">C1</div>
+      <div class="box-item-2">C2</div>
+      <div class="box-item-2">C3</div>
+      <div class="box-item-3">C4</div>
+      <div class="box-item-4">C5</div>
+      <div class="box-item-1">C1</div>
+      <div class="box-item-2">C2</div>
+      <div class="box-item-2">C3</div>
+      <div class="box-item-3">C4</div>
+      <div class="box-item-4">C5</div>
+      <div class="box-item-1">C1</div>
+      <div class="box-item-2">C2</div>
+      <div class="box-item-2">C3</div>
+      <div class="box-item-3">C4</div>
+      <div class="box-item-4">C5</div>
     </div>
-    <div class="demo-container"></div>
+    <div>
+      <p>Hello 1</p>
+      <p>Hello 2</p>
+      <p>Hello 3</p>
+      <p>Hello 4</p>
+      <p>Hello 5</p>
+      <h1>I am a paragraph</h1>
+      <span>
+        Inside span
+        <p>Hello 6</p>
+        <p>Hello 7</p>
+        <span>
+          Inside second span
+          <p>Hello 8</p>
+          <p>Hello 9</p>
+        </span>
+        <h1>I am another paragraph</h1>
+        <div class="box-item-2">C2</div>
+        <div class="box-item-2">C3</div>
+        <div class="box-item-3">C4</div>
+        <div class="box-item-4">C5</div>
+        <h1>I am third paragraph</h1>
+      </span>
+    </div>
+    <div class="flex-container">
+      <div class="flex-item-1 text">1</div>
+      <div class="flex-item-2 text">2</div>
+      <div class="flex-item-3 text">3</div>
+      <div class="flex-item-4 text">4</div>
+      <div class="flex-item-5 text">5</div>
+      <div class="flex-item-1 text">6</div>
+      <div class="flex-item-2 text">7</div>
+      <div class="flex-item-3 text">8</div>
+      <div class="flex-item-4 text">9</div>
+      <div class="flex-item-5 text">10</div>
+      <div class="flex-item-1 text">11</div>
+      <div class="flex-item-2 text">12</div>
+      <div class="flex-item-3 text">13</div>
+      <div class="flex-item-4 text">14</div>
+      <div class="flex-item-5 text">15</div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-item-1">1</div>
+      <div class="grid-item-2">2</div>
+      <div class="grid-item-3">3</div>
+      <div class="grid-item-4">4</div>
+      <div class="grid-item-5">5</div>
+      <div class="grid-item-6">6</div>
+    </div>
+    <div class="parent-container">
+      <div class="items-container">Main Page</div>
+      <div class="items-cont">Login Page</div>
+    </div>
   </body>
 </html>
