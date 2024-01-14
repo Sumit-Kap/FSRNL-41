@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script defer type="text/babel">
+      // child
+      class Sum extends React.Component {
+        constructor(props) {
+          super(props);
+        }
+        handleClick = () => {
+          const { updateCounter } = this.props;
+          updateCounter(-1);
+        };
+        render() {
+          const { num1, num2 } = this.props; // props
+          return (
+            <React.Fragment>
+              <h2>Sum is {num1 + num2}</h2>
+              <button onClick={this.handleClick}>Decrement</button>
+            </React.Fragment>
+          );
+          // JSX
+        }
+      }
+      // parent
+      // uni-directional data flow
+      class HelloWorld extends React.Component {
+        constructor(props) {
+          super(props); // it instantiate the parent class constructor + OOPs concept
+          this.state = {
+            counter: 0,
+          };
+          this.handleClick = this.handleClick.bind(this); //
+        }
+        handleClick() {
+          console.log(this);
+          const { counter } = this.state;
+          console.log(this);
+          this.setState({
+            counter: counter + 1,
+          });
+        }
+
+        adjustCounter = (value) => {
+          console.log(value);
+          const { counter } = this.state;
+          this.setState({
+            counter: counter + value,
+          });
+        };
+        // mandatory method
+        render() {
+          const { counter } = this.state;
+          // JSX - Javascript XML
+          return (
+            <>
+              <div>Counter is {counter}</div>
+              <h1>Hello world</h1>
+              <Sum num1={5} num2={9} updateCounter={this.adjustCounter} />
+              <button
+                style={{ marginRight: "10px" }}
+                onClick={this.handleClick}
+              >
+                Increment
+              </button>
+            </>
+          ); // JSX
+          // long polling - http,
+          // short polling - http
+          // web socket
+          // create-react-app + webpack + react-routing + lifecycle of class-based component + functional components + hooks
+        }
+      }
+
+      ReactDOM.render(<HelloWorld />, document.getElementById("root"));
+
+      // function b(){
+
+      // };
+
+      // const a = b;
+      // a()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

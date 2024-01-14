@@ -98,3 +98,15 @@ async function getData() {
 }
 
 getData();
+
+function calculateSum(a, b) {
+  if (typeof a !== number && typeof b !== number) {
+    throw new Error("Please pass numbers");
+  }
+  return a + b;
+}
+
+// async function higherOrderSum(cb){
+//   cb("John", "doe");
+// }
+// higherOrderSum(calculateSum);
