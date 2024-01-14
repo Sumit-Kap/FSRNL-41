@@ -1,3 +1,4 @@
+"use strict";
 // alert("In app.js file"); // external linking of javascript
 //
 const container = document.querySelector(".items-cont");
@@ -189,3 +190,133 @@ const getName = function () {
   let a = "123";
   console.log(123);
 })();
+
+console.log(this); // In global scope your this keyword points to the window object
+
+function normal() {
+  console.log(this);
+}
+const arrow = () => {
+  console.log(this);
+};
+
+normal();
+arrow();
+
+const obj88 = {
+  fullName: "Sumit Kapoor",
+};
+
+const getName12 = () => {
+  // default binding
+  console.log(this.fullName, this);
+  // function a() {
+  //   console.log(this, "In here");
+  //   return this.fullName;
+  // }
+  // a();
+  return this.fullName;
+};
+console.log("pre", getName12.call(obj88)); // bind returns a new method
+// console.log("pre", newName()); // unde
+
+// call, apply, bind - explicit binding
+//1. Memory mapping, execution - EC
+// console.log("test", firstName);
+const getName123 = () => {
+  let firstName = "Sonali";
+  //-----------------------
+  return function () {
+    console.log(firstName); // error
+  };
+};
+
+const firstName = getName123();
+
+firstName();
+
+var department = "HR";
+console.log(department);
+function employeeDetails() {
+  department = "Tech";
+  return function (employeeSalary) {
+    return function (employeeAge) {
+      console.log("print", department, employeeAge, employeeSalary);
+    };
+  };
+}
+// var can be changed let and const ie variable shadowing
+// closure vs chaining
+// In
+console.log(department);
+
+// Inner function - outer function + global scope
+
+console.log(employeeDetails()(12000)(28));
+
+var batchSize = 30;
+var course = "FRSNL";
+var duration = 2;
+
+function gfgFunction() {
+  // Right now this keyword is pointing to window object.
+  // How can i change this reference??
+  console.log(arguments);
+  console.log(
+    "Important info",
+    this,
+    this.batchSize,
+    this.course,
+    this.duration
+  );
+}
+gfgFunction();
+const courseInfo = {
+  batchSize: 50,
+  course: "Java backend",
+  duration: 4,
+};
+
+const gfgInstance = gfgFunction.bind(courseInfo, "Narendra Modi", "PM"); // bind always returns us a new function
+console.log(typeof gfgInstance);
+gfgInstance();
+
+const courseInfo2 = {
+  batchSize: 30,
+  course: "DSA",
+  duration: 1,
+};
+
+gfgFunction.call(courseInfo2, "Sandeep Jain", "CEO"); // the function is immediately invoked
+
+const courseInfo3 = {
+  batchSize: 70,
+  course: "AI/ML",
+  duration: 6,
+};
+gfgFunction.apply(courseInfo3, ["Jaishankar", "EAM"]);
+// constructor function
+function User(name, age, gender) {
+  // this.name = name;
+  // this.age = age;
+  // this.gender = gender;
+}
+
+const user = new User("John Doe", 45, "Male");
+console.log(user);
+
+function User() {
+  console.log(this);
+  console.log(this.user);
+}
+
+const userA = {
+  user: "Sumit",
+  getUser: User,
+};
+
+console.log(userA.getUser()); // Sumit​
+const refFunc = userA.getUser;
+refFunc(); // undefined
+
+console.log("global scope", this);

@@ -32,3 +32,44 @@ const uniqueKey = Symbol("store");
 const generateKey = Symbol.for("Sumit");
 
 console.log(uniqueKey.toString(), generateKey.toString());
+
+// types of function,scopes, variable shadowing, closures, prototypes.
+
+//HTML + CSS + JS
+// global scope
+function a(){
+  // outer scope
+  (function(){
+  // inner scope
+  }())
+  // b();
+}
+
+//currying - Maths
+
+// function a(a){ 1
+//   return (b)=>{ 2
+//     return (c)=>{ 3
+//       return a+b+c;
+//     }
+//   }
+// }
+
+// iterative approach - loops, recursive approach
+for(let i=0; i<num; i++){
+
+}
+function sum(){
+  if(){
+    // some condition
+  } // baseCondition
+  sum();
+}
+
+// a(1)(2)(3)........() // 6
+// a(1,2,3,4...)(5,6,7,8....)(9,10,11,12.....).........() // sum/multiplication
+// sum(1,2)(3,4)(5,6)(7,8)(9,10)(11,12)(13,14)(15,16)()..........
+// arr.map(i item *2)
+
+
+console.log(this);
