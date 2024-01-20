@@ -26,10 +26,10 @@
         render() {
           const { num1, num2 } = this.props; // props
           return (
-            <React.Fragment>
+            <>
               <h2>Sum is {num1 + num2}</h2>
               <button onClick={this.handleClick}>Decrement</button>
-            </React.Fragment>
+            </>
           );
           // JSX
         }
