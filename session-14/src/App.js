@@ -5,6 +5,10 @@ import Aboutus from "./component/Aboutus";
 import ContactUs from "./component/ContactUs";
 import Header from "./component/Header";
 import { Route, Routes } from "react-router-dom";
+import AboutHOC from "./component/AboutHOC";
+import FunctionalComponent from "./component/FunctionalComponent";
+import NewHooks from "./component/NewHooks";
+
 class App extends React.Component {
   // before first render
   constructor(props) {
@@ -25,6 +29,12 @@ class App extends React.Component {
           <Route element={<Homepage />} path="/" />
           <Route element={<Aboutus />} path="/about-us" />
           <Route element={<ContactUs />} path="/contact-us" />
+          <Route element={<AboutHOC />} path="/about-hoc" />
+          <Route
+            element={<FunctionalComponent />}
+            path="/functional-components"
+          />
+          <Route element={<NewHooks />} path="/new-hooks" />
         </Routes>
         {/* {!flag ? <Home /> : ""}
         <button

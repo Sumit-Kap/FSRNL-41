@@ -12,6 +12,18 @@ const Header = () => {
       <Link to="/about-us" style={{ paddingLeft: "10px", fontSize: "22px" }}>
         About us
       </Link>
+      <Link to="/about-hoc" style={{ paddingLeft: "10px", fontSize: "22px" }}>
+        About HOC
+      </Link>
+      <Link
+        to="/functional-components"
+        style={{ paddingLeft: "10px", fontSize: "22px" }}
+      >
+        Functional component
+      </Link>
+      <Link to="/new-hooks" style={{ paddingLeft: "10px", fontSize: "22px" }}>
+        New Hooks
+      </Link>
     </>
   );
 };
