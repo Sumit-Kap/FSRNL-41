@@ -1,15 +1,25 @@
-import { withRouter } from "react-router";
+// import { withRouter } from "react-router";
+import React from "react";
 
-const Homepage = (props) => {
-  console.log(props);
-  const { history } = props;
-  const handleClick = () => {
+class Homepage extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
+  }
+  handleClick = () => {
+    const { history } = this.props;
     history.push("/contact-us");
   };
-  return <div onClick={handleClick}>In Homepage</div>;
-};
-
-export default withRouter(Homepage);
+  render() {
+    return (
+      <>
+        <div onClick={this.handleClick}>In Homepage</div>
+      </>
+    );
+  }
+}
+// HOC
+export default Homepage;
 
 /*
 2 ways to connect your component to react router

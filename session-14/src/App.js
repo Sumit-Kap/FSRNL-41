@@ -4,7 +4,7 @@ import Homepage from "./component/Homepage";
 import Aboutus from "./component/Aboutus";
 import ContactUs from "./component/ContactUs";
 import Header from "./component/Header";
-import { Route, Routes } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 class App extends React.Component {
   // before first render
   constructor(props) {
@@ -21,11 +21,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Routes>
-          <Route element={<Homepage />} path="/" />
-          <Route element={<Aboutus />} path="/about-us" />
-          <Route element={<ContactUs />} path="/contact-us" />
-        </Routes>
+        <Switch>
+          <Route component={Homepage} path="/" exact />
+          <Route component={Aboutus} path="/about-us" exact />
+          <Route component={ContactUs} path="/contact-us" exact />
+        </Switch>
         {/* {!flag ? <Home /> : ""}
         <button
           onClick={() => {
