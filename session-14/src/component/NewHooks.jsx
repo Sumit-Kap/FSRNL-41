@@ -7,11 +7,13 @@ const NewHooks = () => {
   };
   // it will be recreated everytime on the re-render.
   const handleChange = React.useCallback(() => {}, []);
+  // [];
 
   return (
     <>
-      <DemoCallback handleChange={handleChange} />
-      <button onClick={handleClick}>Increment</button>
+      <DemoCallback handleChange={handleChange}>
+        <button onClick={handleClick}>Increment</button>
+      </DemoCallback>
     </>
   );
 };
