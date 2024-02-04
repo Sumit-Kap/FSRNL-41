@@ -24,6 +24,9 @@ const Header = () => {
       <Link to="/new-hooks" style={{ paddingLeft: "10px", fontSize: "22px" }}>
         New Hooks
       </Link>
+      <Link to="/banking" style={{ paddingLeft: "10px", fontSize: "22px" }}>
+        Banking
+      </Link>
     </>
   );
 };

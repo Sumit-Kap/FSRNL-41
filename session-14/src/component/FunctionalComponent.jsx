@@ -6,7 +6,7 @@ const FunctionalComponent = () => {
   const ref = React.useRef(null);
   // getDerivedStateFromProps + componentDidMount
   // This is the ideal place for calling the APIs
-
+  //
   React.useLayoutEffect(() => {
     console.log("In useLayoutEffect");
   });
@@ -24,6 +24,9 @@ const FunctionalComponent = () => {
         .catch((err) => console.log(err));
     })();
   }, []);
+  // if you don't pass dependency array then useEffect will be triggered on every re-render.
+  // If you pass empty dependency array then useEffect will be called only once after first render.
+  // if you pass state variable/props or deps then useEffect will be triggered based on changes in dependencies passed.
 
   const handleTimer = () => {
     ref.current = setInterval(() => {

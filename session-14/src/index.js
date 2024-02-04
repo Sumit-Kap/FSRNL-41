@@ -4,15 +4,25 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-
+import { Provider } from "react-redux";
+import store from "./store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+console.log("prinitng", store);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// we created the action methods
+// we created the reducer
+// we combine the reducer and provided the name to the store.
+// we connected our combination of reducer to store.
+// In our root file we passed the store info to provider.
 
 // ReactDOM.render(<App />, document.getElementById("root"));
 
