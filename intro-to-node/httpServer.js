@@ -1,7 +1,8 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const server = http.createServer((req, res) => {
+
+const server = http.createServer((req, res, next) => {
   console.log(req.url);
   if (req.url === "/") {
     console.log(__dirname);

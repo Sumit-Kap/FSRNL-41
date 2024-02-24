@@ -1,0 +1,19 @@
+{
+  "name": "intro-to-express-mongodb",
+  "version": "1.0.0",
+  "description": "Introduction to express and mongoose ORM of mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "author": "Sumit Kapoor",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
